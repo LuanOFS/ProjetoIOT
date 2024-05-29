@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"/>
-    <script src="https://kit.fontawesome.com/655818063d.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>   <script src="https://kit.fontawesome.com/655818063d.js" crossorigin="anonymous"></script>
+    <title>ProjetoIOT</title>
 </head>
 <body>
+    <section>
     <header>
-        <input type="text">
-        <i class="fa-brands fa-github fa-2x" style="color: #020008;"></i>
-    </header>
-        
-    <div class="menu">
+        <input class="barra-de-pesquisa" type="text">
+        <a href="https://github.com/LuanOFS/ProjetoIOT"><i class="fa-brands fa-github fa-2x" style="color: #020008;"></i></a>
+    </header>       
+    <div class="corpo">
      <main>
-         <h1>Hrif</h1>
-    </main>
-
+         <h1 class="titulo-corpo">Projeto IOT</h1>
+         <img class="caixinha" src="https://raw.githubusercontent.com/LuanOFS/ProjetoIOT/main/assets/BOX-1.png"></img>
+         <p class="texto-corpo"><strong>O Arduino</strong>, uma plataforma de prototipagem eletrônica acessível e versátil, 
+         <p class="texto-corpo">é frequentemente combinado com diversos dispositivos para criar uma ampla gama de projetos.</p> 
+         <p class="texto-corpo">Um desses dispositivos é o módulo <strong>RFID (Radio-Frequency Identification)</strong>,</p> 
+         <p class="texto-corpo">utilizado para identificação sem contato por meio de sinais de rádio.</p>
+         <p class="texto-corpo">O módulo RFID consiste em um leitor e uma antena que podem detectar tags ou cartões RFID próximos e ler suas informações.</p>
+         <p class="texto-corpo">Quando combinado com o Arduino, o módulo RFID abre possibilidades para projetos como controle de acesso, inventário automatizado, sistemas de segurança e muito mais.</p>
+      </main> 
     </div>
+    </section>
+
+       <section>
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <h1 class="login">Login</h1>
+            <p>Acesso restrito somente ao administrador.</p>
+            <label for="email">E-mail: <input type="email" placeholder="Digite seu e-mail" autofocus="true" required /></label>
+            <label for="password">Senha: <input type="password" pattern="[a-z0-5]{8,}" placeholder="Digite sua senha" required /></label>
+            <a href="/">Esqueci minha senha</a>
+            <input type="submit" value="Acessar" class="btn" />
+        </form>
+    </div>
+       </section>
+
+
+   
 
     
 </body>
