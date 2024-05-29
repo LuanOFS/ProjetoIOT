@@ -1,4 +1,20 @@
-  header{
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap);
+
+
+
+
+body{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #16062d;
+  background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36 0H0v36h36V0zM15.126 2H2v13.126c.367.094.714.24 1.032.428L15.554 3.032c-.188-.318-.334-.665-.428-1.032zM18 4.874V18H4.874c-.094-.367-.24-.714-.428-1.032L16.968 4.446c.318.188.665.334 1.032.428zM22.874 2h11.712L20 16.586V4.874c1.406-.362 2.512-1.468 2.874-2.874zm10.252 18H20v13.126c.367.094.714.24 1.032.428l12.522-12.522c-.188-.318-.334-.665-.428-1.032zM36 22.874V36H22.874c-.094-.367-.24-.714-.428-1.032l12.522-12.522c.318.188.665.334 1.032.428zm0-7.748V3.414L21.414 18h11.712c.362-1.406 1.468-2.512 2.874-2.874zm-18 18V21.414L3.414 36h11.712c.362-1.406 1.468-2.512 2.874-2.874zM4.874 20h11.712L2 34.586V22.874c1.406-.362 2.512-1.468 2.874-2.874z' fill='%234e1f9a' fill-opacity='0.51' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+
+ /*Inicio da header*/
+ header{
     background: rgba(0, 220 ,120);
     border-bottom: 4px solid black;
     display: flex;
@@ -7,7 +23,7 @@
     padding: 10px;
   }
 
-  input{
+  .barra-de-pesquisa{
     position: absolute;
     font-size: 1.4em;
     background-color: transparent;
@@ -16,8 +32,11 @@
     color: black;
     padding: 5px;
     box-sizing: border-box;
-
   }
+
+  input:focus {
+    outline: none;
+}
  
   /*
   .input_text{
@@ -33,21 +52,92 @@
 
 */
 
-i{
+a, .i{
     display: inline-block;
     width: 30px;
     height: 30px;
     margin-left: 98%;
-}
+  }
 
-.menu{
-    width: 80%;
-  background-color: grey;
+/*fim da header*/
+
+/*Inicio da body*/
+.corpo{
+  width: 80%;
+  background: rgba(128, 128, 128, 0.7);
   margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
-
+  padding-bottom: 1px;
+  border: 1px solid white;
+  
 }
-  
 
-  
+.titulo-corpo{
+  font-family: 'Amatic SC';
+  display: table;
+  white-space: nowrap;
+  font-size: 50px;
+  &:before, &:after {
+  border-top: 1px solid white;
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 0.5em;
+  width: 45%;
+    }
+    &:before { right: 0%;
+     }
+    &:after { left: 0%; 
+    }
+}
+
+
+.caixinha{
+  position: absolute;
+  display: inline-block;
+  width: 26%;
+  height: auto; 
+  margin-left: 27cm;
+  top: -2cm;
+}
+
+.texto-corpo{
+  font-family: 'Amatic SC';
+  text-align: left;
+  font-size: 30px;
+  margin-left: 5px;
+}
+
+/*Fim da Body*/
+
+
+/*Inicio do form*/
+
+.page{
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+.formLogin{  
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 40px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+  gap: 5px
+}
+
+.login{
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.3em;
+}
