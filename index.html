@@ -29,20 +29,43 @@
 
        <section>
     <div class="page">
-        <form method="POST" class="formLogin">
-            <h1 class="login">Login</h1>
-            <p>Acesso restrito somente ao administrador.</p>
-            <label for="email">E-mail: <input type="email" placeholder="Digite seu e-mail" autofocus="true" required /></label>
-            <label for="password">Senha: <input type="password" pattern="[a-z0-5]{8,}" placeholder="Digite sua senha" required /></label>
-            <a href="/">Esqueci minha senha</a>
-            <input type="submit" value="Acessar" class="btn" />
-        </form>
+              <form id="accessForm" class="formLogin">
+                <h1 class="titulo-login">Login</h1>
+                <label class="legenda-login" for="rfid">ID do Cartão RFID: <input class="id-de-acesso" type="password" id="rfid" name="rfid" placeholder="*********" /></label>
+                <button type="button" class="btn" onclick="requestAccess()">Acessar</button>
+                <p id="error"></p>
+                <p id="accessStatus"></p>
+            </form>
     </div>
        </section>
 
+       <script>
+        function requestAccess() {
+            console.log("Função requestAccess() foi chamada.");
+            var rfid = document.getElementById("rfid").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "Ip do arduino vem para cá! :D", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.accessGranted) {
+                    if (response.isAdmin) {
+                        window.location.href = "pagina_admin.html";
+                    } else {
+                        window.location.href = "pagina_usuario.html";
+                    }
+                } else {
+                    document.getElementById("error").innerText = "Acesso negado. Verifique seu ID do RFID.";
+                }
+            } else {
+                document.getElementById("error").innerText = "Erro ao se comunicar com o Arduino.";
+            }
+        }
+    };
+            var data = JSON.stringify({ "rfid": rfid });
+            xhr.send(data);
 
-   
-
-    
+        </script> 
 </body>
 </html>
