@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>   <script src="https://kit.fontawesome.com/655818063d.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <header>
+            <input class="barra-de-pesquisa" type="text">
+            <a href="https://github.com/LuanOFS/ProjetoIOT"><i class="fa-brands fa-github fa-2x" style="color: #020008;"></i></a>
+        </header>  
+
+        <div class="page2">
+            <h1 style="color: aqua;">Seja bem vindo!</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>ID RFID</th>
+                        <th>Data de Registro</th>
+                        <!--tu pode ir adicionando mais a partir daqui caso necessario -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Luan</td>
+                        <td>ID RFID 1</td>
+                        <td>30/05/2024</td>
+
+                    </tr>
+                    <tr>
+                        <td>Hugo</td>
+                        <td>ID RFID 2</td>
+                        <td>30/05/2024</td>
+
+                    </tr>
+                
+                </tbody>
+            </table>
+            <button class="btn"><a class="sair" href="index.html">Sair</a></button> 
+        </div>
+       
+        <script>
+            function populateUserTable() {
+                fetch('http://IP_DO_SEU_SERVIDOR/usuarios')/*<Procurar no teu arduino*/ 
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.querySelector('#userTable tbody');
+                        tableBody.innerHTML = ''; 
+                        data.forEach(user => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${user.nome}</td>
+                                <td>${user.rfid}</td>
+                                <td>${user.data_registro}</td>
+   
+                            `;
+                            tableBody.appendChild(row); // Função de adiciona a linha à tabela
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Erro ao obter dados dos usuários:', error);
+                    });
+            }
+    
+
+            window.onload = populateUserTable;
+        </script>
+
+</body>
+</html>
