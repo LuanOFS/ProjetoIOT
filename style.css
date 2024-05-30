@@ -115,7 +115,7 @@ a, .i{
 /*Inicio do form*/
 
 .page{
-  background-color: red;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,16 +128,101 @@ a, .i{
 .formLogin{  
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background: rgba(128, 128, 128, 0.7);
   border-radius: 7px;
   padding: 40px;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
   gap: 5px
 }
 
-.login{
+.titulo-login{
   padding: 0;
   margin: 0;
   font-weight: 500;
   font-size: 2.3em;
+}
+
+.legenda-login{
+  display: inline-block;
+  font-size: 14px;
+  color: black;
+  margin-bottom: 25px;
+}
+
+.id-de-acesso{
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 4px;
+  transition: all linear 160ms;
+  outline: none;
+}
+
+.id-de-acesso{
+  border: 1px solid #f72585;
+}
+
+.legenda-login{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn {
+  background-color: #f72585;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none !important;
+  transition: all linear 160ms;
+  cursor: pointer;
+  margin: 0 !important;
+
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background-color: #ff0676;
+
+}
+
+#error{
+  font-size: 14px;
+  font-weight: 600;
+  color: red;
+}
+
+
+
+
+/*Página do adm*/
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color: white; 
+   }
+   td{
+    background-color: black;
+   }
+th {
+  background-color: rgba(0, 220 ,120);
+}
+
+.sair{
+  background-color: #f72585;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none !important;
+  transition: all linear 160ms;
+  cursor: pointer;
+  margin: 0 !important;
+
 }
